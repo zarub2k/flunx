@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xyz.tham.flunx">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="flunx"
         android:icon="@mipmap/ic_launcher">
