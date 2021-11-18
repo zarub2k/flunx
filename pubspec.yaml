@@ -62,6 +62,7 @@ flutter:
   assets:
     - assets/card1.jpg
     - assets/card2.jpg
+    - assets/card3.jpg
     - assets/tham.png
   #   - images/a_dot_ham.jpeg
 
