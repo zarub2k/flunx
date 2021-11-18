@@ -1,3 +1,4 @@
+import 'package:flunx/flunx_theme.dart';
 import 'package:flutter/material.dart';
 
 class Card1 extends StatelessWidget {
@@ -20,6 +21,32 @@ class Card1 extends StatelessWidget {
         constraints: const BoxConstraints.expand(
           width: 350,
           height: 450
+        ),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/card1.jpg'),
+            fit: BoxFit.cover
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(10.0))
+        ),
+        child: Stack(
+          children: [
+            Text(category, style: FlunxTheme.darkTextTheme.bodyText1,),
+            Positioned(
+              child: Text(title, style: FlunxTheme.darkTextTheme.headline1,),
+              top: 25,
+            ),
+            Positioned(
+              child: Text(description, style: FlunxTheme.darkTextTheme.bodyText1,),
+              bottom: 30,
+              right: 0,
+            ),
+            Positioned(
+              child: Text(chef, style: FlunxTheme.darkTextTheme.bodyText1,),
+              bottom: 10,
+              right: 0,
+            ),
+          ],
         ),
       ),
     );

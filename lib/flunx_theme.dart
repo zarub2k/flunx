@@ -22,6 +22,11 @@ class FlunxTheme {
       fontSize: 16.0,
       fontWeight: FontWeight.w700,
       color: Colors.white
+    ),
+    headline1: GoogleFonts.abel(
+      fontSize: 32.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.white
     )
   );
 }
