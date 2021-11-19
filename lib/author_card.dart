@@ -2,7 +2,7 @@ import 'package:flunx/circle_image.dart';
 import 'package:flunx/flunx_theme.dart';
 import 'package:flutter/material.dart';
 
-class AuthorCard extends StatelessWidget {
+class AuthorCard extends StatefulWidget {
   const AuthorCard({
     Key? key,
     required this.name,
@@ -13,6 +13,14 @@ class AuthorCard extends StatelessWidget {
   final String name;
   final String title;
   final ImageProvider? imageProvider;
+
+  @override
+  State<AuthorCard> createState() => _AuthorCardState();
+}
+
+class _AuthorCardState extends State<AuthorCard> {
+  bool _isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return _buildAuthorCard(context);
@@ -27,26 +35,27 @@ class AuthorCard extends StatelessWidget {
           Row(
             children: [
               CircleImage(
-                imageProvider: imageProvider,
+                imageProvider: widget.imageProvider,
                 imageRadius: 28,
               ),
               const SizedBox(width: 8,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: FlunxTheme.darkTextTheme.headline2,),
-                  Text(title, style: FlunxTheme.darkTextTheme.bodyText1,)
+                  Text(widget.name, style: FlunxTheme.darkTextTheme.headline2,),
+                  Text(widget.title, style: FlunxTheme.darkTextTheme.bodyText1,)
                 ],
               ),
             ],
           ),
           IconButton(
-            icon: const Icon(Icons.favorite),
+            icon: _isFavorite ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
             iconSize: 30,
             color: Colors.grey[400],
             onPressed: () {
-              const snackBar = SnackBar(content: Text('Fav Pressed'));
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              setState(() {
+                _isFavorite = !_isFavorite;
+              });
             },
           ),
         ],
