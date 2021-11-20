@@ -1,5 +1,5 @@
+import 'package:flunx/foodlab/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
-import 'card1.dart';
 import 'card2.dart';
 import 'card3.dart';
 
@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = [
-    const Card1(),
+    ExploreScreen(),
     const Card2(),
     const Card3(),
   ];
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.five_k_plus_outlined),
-          label: 'Card'
+          label: 'Explore'
         ),
         BottomNavigationBarItem(icon: Icon(Icons.five_k_plus_outlined), label: 'Card'),
         BottomNavigationBarItem(icon: Icon(Icons.five_k_plus_outlined), label: 'Card')
