@@ -1,9 +1,14 @@
 import 'dart:convert';
 
+import 'package:flunx/foodlab/models/explore_data.dart';
 import 'package:flunx/foodlab/models/recipe.dart';
 import 'package:flutter/services.dart';
 
 class MockFoodService {
+  Future<ExploreData> getExploreData() async {
+    final exploreData = ExploreData();
+    return exploreData;
+  }
 
   Future<List<Recipe>> _getRecipes() async {
     //simulate wait time

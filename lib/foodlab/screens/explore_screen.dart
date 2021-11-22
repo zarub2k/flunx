@@ -1,4 +1,5 @@
 import 'package:flunx/foodlab/api/mock_service.dart';
+import 'package:flunx/foodlab/models/explore_data.dart';
 import 'package:flutter/material.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -12,8 +13,21 @@ class ExploreScreen extends StatelessWidget {
   }
 
   Widget _buildExploreScreen(BuildContext context) {
-    return const Center(
-      child: Text('Explore screen'),
+    return FutureBuilder(
+      builder: (context, AsyncSnapshot<ExploreData> snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          final recipes = snapshot.data?.todayRecipes ?? [];
+          return Center(
+            child: Container(
+              child: const Text('Placeholder'),
+            ),
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      }
     );
   }
 }
