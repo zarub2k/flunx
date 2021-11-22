@@ -1,0 +1,34 @@
+{
+  "recipes": [
+    {
+      "id": "rec1",
+      "title": "Italian Fresh Cake",
+      "dishImage": "assets/food_pics/cake.jpg",
+      "duration": "30 mins"
+    },
+    {
+      "id": "rec2",
+      "title": "Fresh Juice",
+      "dishImage": "assets/food_pics/juice.jpg",
+      "duration": "15 mins"
+    },
+    {
+      "id": "rec3",
+      "title": "Fluffy Pancakes",
+      "dishImage": "assets/food_pics/pancake.jpg",
+      "duration": "30 mins"
+    },
+    {
+      "id": "rec4",
+      "title": "Smoked Pasta",
+      "dishImage": "assets/food_pics/pasta.jpg",
+      "duration": "30 mins"
+    },
+    {
+      "id": "rec5",
+      "title": "Healthy Salad",
+      "dishImage": "assets/food_pics/salad.jpg",
+      "duration": "15 mins"
+    }
+  ]
+}
