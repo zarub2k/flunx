@@ -1,6 +1,7 @@
 import 'package:flunx/foodlab/screens/explore_screen.dart';
+import 'package:flunx/foodlab/screens/grocery_screen.dart';
+import 'package:flunx/foodlab/screens/recipes_screen.dart';
 import 'package:flutter/material.dart';
-import 'card2.dart';
 import 'card3.dart';
 
 class Home extends StatefulWidget {
@@ -17,8 +18,8 @@ class _HomeState extends State<Home> {
 
   static List<Widget> pages = [
     ExploreScreen(),
-    const Card2(),
-    const Card3(),
+    RecipesScreen(),
+    const GroceryScreen(),
   ];
 
   @override
@@ -41,8 +42,8 @@ class _HomeState extends State<Home> {
           icon: Icon(Icons.five_k_plus_outlined),
           label: 'Explore'
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.five_k_plus_outlined), label: 'Card'),
-        BottomNavigationBarItem(icon: Icon(Icons.five_k_plus_outlined), label: 'Card')
+        BottomNavigationBarItem(icon: Icon(Icons.five_k_plus_outlined), label: 'Recipes'),
+        BottomNavigationBarItem(icon: Icon(Icons.five_k_plus_outlined), label: 'To Buy')
       ],
       onTap: _onTap,
     );

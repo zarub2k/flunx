@@ -1,4 +1,5 @@
 import 'package:flunx/foodlab/api/mock_service.dart';
+import 'package:flunx/foodlab/components/friend_post_list_view.dart';
 import 'package:flunx/foodlab/components/today_recipe_list.dart';
 import 'package:flunx/foodlab/models/explore_data.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +20,15 @@ class ExploreScreen extends StatelessWidget {
       builder: (context, AsyncSnapshot<ExploreData> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           final recipes = snapshot.data?.todayRecipes ?? [];
-          return Center(
-            child: Container(
-              child: TodayRecipeListView(recipes: recipes,),
-            ),
+          final posts = snapshot.data?.posts ?? [];
+          print(posts);
+          return ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              TodayRecipeListView(recipes: recipes),
+              const SizedBox(height: 16,),
+              FriendPostListView(posts: posts)
+            ],
           );
         } else {
           return const Center(
