@@ -1,12 +1,15 @@
 import 'dart:convert';
 
 import 'package:flunx/foodlab/models/explore_data.dart';
+import 'package:flunx/foodlab/models/post.dart';
 import 'package:flunx/foodlab/models/recipe.dart';
 import 'package:flutter/services.dart';
 
 class MockFoodService {
   Future<ExploreData> getExploreData() async {
-    final exploreData = ExploreData();
+    final List<Recipe> recipes = await _getRecipes();
+    final List<Post> posts = <Post>[];
+    final exploreData = ExploreData(recipes, posts);
     return exploreData;
   }
 

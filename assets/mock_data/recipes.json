@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": "rec1",
-      "title": "Italian Fresh Cake",
+      "title": "Italian Fresh Cakes",
       "dishImage": "assets/food_pics/cake.jpg",
       "duration": "30 mins"
     },
