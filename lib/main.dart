@@ -1,5 +1,8 @@
 import 'package:flunx/flunx_theme.dart';
+import 'package:flunx/foodlab/models/grocery_manager.dart';
+import 'package:flunx/foodlab/models/tab_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'home.dart';
 
 void main() {
@@ -22,7 +25,14 @@ class Flunx extends StatelessWidget {
       //     secondary: Colors.black
       //   )
       // ),
-      home: const Home(),
+      // home: const Home(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => TabManager()),
+          ChangeNotifierProvider(create: (context) => GroceryManager())
+        ],
+        child: const Home(),
+      ),
     );
   }
 }
